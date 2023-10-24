@@ -1,0 +1,9 @@
+{
+  "name": "lab",
+  "version": "0.0.0",
+  "private": true,
+  "license": "Unlicense",
+	"workspaces": [
+		"habitats/*"
+	]
+}
