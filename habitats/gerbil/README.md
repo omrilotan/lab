@@ -1,5 +1,7 @@
 # gerbil
 
-```sh
-npm start -w gerbil
-```
+Build: `npm i -w gerbil`
+
+Start: `npm start -w gerbil`
+
+Dev: `npm run dev -w gerbil`

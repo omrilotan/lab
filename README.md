@@ -1,6 +1,6 @@
 # lab
 
-### doc
+## doc
 
 A static website
 

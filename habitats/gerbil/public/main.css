@@ -22,3 +22,8 @@ main {
 	align-items: center;
 	height: 100%;
 }
+
+textarea {
+	height: 20em;
+	overflow-y: scroll;
+}
