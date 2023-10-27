@@ -2,6 +2,7 @@
 	"name": "gerbil",
 	"type": "module",
 	"scripts": {
+		"build": "echo \"nothing\"",
 		"start": "node index.js"
 	},
 	"dependencies": {
