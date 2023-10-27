@@ -15,6 +15,9 @@ const page = `<!DOCTYPE html>
 		<button type="submit" class="scenario" data-source="/data/test1.js"></button>
 		<button type="submit" class="scenario" data-source="/data/test2.js"></button>
 		<button type="submit" class="scenario" data-source="/data/test3.js"></button>
+		<button type="submit" class="scenario" data-source="/data/private.js"></button>
+		<button type="submit" class="scenario" data-source="/data/no-store.js"></button>
+		<button type="submit" class="scenario" data-source="/data/no-cache.js"></button>
 		<p>&nbsp;</p>
 		<textarea id="output"></textarea>
 	</main>
