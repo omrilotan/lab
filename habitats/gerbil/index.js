@@ -7,7 +7,17 @@ safeSetHeader({ log });
 
 const app = express();
 
-app.use(express.static("public"));
+app.use(
+	express.static("public", {
+		setHeaders: (response, path) => {
+			if (path.endsWith(".html")) {
+				response.setHeader("Cache-Control", "private, max-age=0");
+			} else {
+				response.setHeader("Cache-Control", "public, max-age=86400");
+			}
+		},
+	}),
+);
 app.use(async (request, response, next) => {
 	response.on("finish", () => {
 		const { method, path } = request;
