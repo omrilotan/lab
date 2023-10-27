@@ -1,19 +1,14 @@
-export async function scenarios(...selectors) {
-	selectors.forEach((selector) => {
-		document
-			.querySelector(selector)
-			.addEventListener("click", async (event) => {
-				console.log(event.type);
-				const dataSource = event.target.getAttribute("data-source");
-				const response = await fetch(dataSource);
-				if (response.ok) {
-					writeResponse(await response.text());
-				}
-			});
+export async function scenario({ triggers, dataSourceAttribute, output }) {
+	[...triggers].forEach((element) => {
+		const dataSource = element.getAttribute(dataSourceAttribute);
+		element.appendChild(document.createTextNode(dataSource));
+		element.addEventListener("click", async (event) => {
+			const response = await fetch(dataSource);
+			if (response.ok) {
+				output.appendChild(
+					document.createTextNode((await response.text()) + "\n"),
+				);
+			}
+		});
 	});
-	function writeResponse(string) {
-		document
-			.querySelector("#output")
-			?.appendChild(document.createTextNode(string + "\n"));
-	}
 }

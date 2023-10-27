@@ -10,15 +10,21 @@ const page = `<!DOCTYPE html>
 	<main>
 		<h1>Gerbil</h1>
 		<p>Test scenario:</p>
-		<button type="submit" id="scenario1" data-source="/data/test">scenario 1</button>
-		<button type="submit" id="scenario2" data-source="/data/test.js">scenario 2</button>
-		<button type="submit" id="scenario3" data-source="/data/test.json">scenario 3</button>
+		<button type="submit" class="scenario" data-source="/data/test1"></button>
+		<button type="submit" class="scenario" data-source="/data/test1.json"></button>
+		<button type="submit" class="scenario" data-source="/data/test1.js"></button>
+		<button type="submit" class="scenario" data-source="/data/test2.js"></button>
+		<button type="submit" class="scenario" data-source="/data/test3.js"></button>
 		<p>&nbsp;</p>
 		<textarea id="output"></textarea>
 	</main>
 	<script type="module">
-		import { scenarios } from "./main.mjs";
-		scenarios("#scenario1", "#scenario2", "#scenario3");
+		import { scenario } from "./main.mjs";
+		scenario({
+			triggers: document.querySelectorAll(".scenario"),
+			dataSourceAttribute: "data-source",
+			output: document.querySelector("#output"),
+		});
 	</script>
 	</body>
 </html>`;

@@ -9,7 +9,7 @@ body {
 }
 body {
 	font:
-		400 3.5vw/1.4 -apple-system,
+		400 1em/1.4 -apple-system,
 		"BlinkMacSystemFont",
 		"Helvetica Neue",
 		"Helvetica",
@@ -22,7 +22,14 @@ main {
 	align-items: center;
 	height: 100%;
 }
-
+h1 {
+	font-size: 6vw;
+}
+button {
+	font-size: 1em;
+	margin: 0.2em;
+	padding: 0.2em 0.5em;
+}
 textarea {
 	height: 20em;
 	overflow-y: scroll;
