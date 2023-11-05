@@ -3,7 +3,7 @@
 	"type": "module",
 	"scripts": {
 		"build": "echo \"nothing\"",
-		"start": "node index.js",
+		"start": "PORT=10000 node index.js",
 		"dev": "node --watch index.js"
 	},
 	"dependencies": {

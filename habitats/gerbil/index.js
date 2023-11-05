@@ -32,11 +32,10 @@ app.use(async (request, response, next) => {
 	next();
 });
 
-routes.forEach(({ method, path, handler }) => {
-	console.log(method, path);
-	app[method.toLowerCase()](path, handler);
-});
+routes.forEach(({ method, path, handler }) =>
+	app[method.toLowerCase()](path, handler),
+);
 
-app.listen(3000, () => {
-	log("Listening on port 3000.");
+app.listen(process.env.PORT, () => {
+	log(`Listening on port ${process.env.PORT}.`);
 });

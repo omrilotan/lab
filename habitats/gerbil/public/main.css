@@ -1,3 +1,26 @@
+:root {
+	--foreground-colour: #151515;
+	--background-colour: #fff;
+	--button-background-colour: #eaeaea;
+	--button-background-colour-hover: #d6d6d6;
+}
+@media (prefers-color-scheme: dark) {
+	:root {
+		--foreground-colour: #fff;
+		--background-colour: #151515;
+		--button-background-colour: #2b2b2b;
+		--button-background-colour-hover: #3f3f3f;
+	}
+}
+@media (prefers-contrast: more) {
+	:root {
+		--foreground-colour: #000;
+		--background-colour: #fff;
+		--button-background-colour: #fff;
+		--button-background-colour-hover: #aaa;
+	}
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -6,6 +29,8 @@
 html,
 body {
 	height: 100%;
+	color: var(--foreground-colour);
+	background: var(--background-colour);
 }
 body {
 	font:
@@ -29,8 +54,17 @@ button {
 	font-size: 1em;
 	margin: 0.2em;
 	padding: 0.2em 0.5em;
+	color: var(--foreground-colour);
+	background: var(--button-background-colour);
+	border-color: var(--foreground-colour);
+}
+button:hover {
+	background: var(--button-background-colour-hover);
 }
 textarea {
 	height: 20em;
 	overflow-y: scroll;
+	color: var(--foreground-colour);
+	background: var(--background-colour);
+	border-color: var(--foreground-colour);
 }
