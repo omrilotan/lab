@@ -18,6 +18,8 @@ const page = `<!DOCTYPE html>
 		<button type="submit" class="scenario" data-source="/data/private.js"></button>
 		<button type="submit" class="scenario" data-source="/data/no-store.js"></button>
 		<button type="submit" class="scenario" data-source="/data/no-cache.js"></button>
+		<button type="submit" class="scenario" data-source="/data/cache.json"></button>
+		<button type="submit" class="scenario" data-source="/data/client.json"></button>
 		<p>&nbsp;</p>
 		<textarea id="output"></textarea>
 	</main>

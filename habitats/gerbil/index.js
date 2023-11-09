@@ -37,5 +37,5 @@ routes.forEach(({ method, path, handler }) =>
 );
 
 app.listen(process.env.PORT, () => {
-	log(`Listening on port ${process.env.PORT}.`);
+	log(`Listening on http://localhost:${process.env.PORT}.`);
 });

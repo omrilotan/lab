@@ -4,7 +4,7 @@
 	"scripts": {
 		"build": "echo \"nothing\"",
 		"start": "PORT=10000 node index.js",
-		"dev": "node --watch index.js"
+		"dev": "DEBUG=true PORT=10000 node --watch index.js"
 	},
 	"dependencies": {
 		"@routes/client": "^0.0.0",
