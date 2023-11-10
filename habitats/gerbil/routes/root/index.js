@@ -1,3 +1,16 @@
+const endpoints = [
+	"/test1",
+	"/test1.json",
+	"/test1.js",
+	"/test2.js",
+	"/test3.js",
+	"/private.js",
+	"/no-store.js",
+	"/no-cache.js",
+	"/cache.json",
+	"/client.json",
+];
+
 const page = `<!DOCTYPE html>
 <html>
 	<head>
@@ -9,17 +22,32 @@ const page = `<!DOCTYPE html>
 	<body>
 	<main>
 		<h1>Gerbil</h1>
-		<p>Test scenario:</p>
-		<button type="submit" class="scenario" data-source="/data/test1"></button>
-		<button type="submit" class="scenario" data-source="/data/test1.json"></button>
-		<button type="submit" class="scenario" data-source="/data/test1.js"></button>
-		<button type="submit" class="scenario" data-source="/data/test2.js"></button>
-		<button type="submit" class="scenario" data-source="/data/test3.js"></button>
-		<button type="submit" class="scenario" data-source="/data/private.js"></button>
-		<button type="submit" class="scenario" data-source="/data/no-store.js"></button>
-		<button type="submit" class="scenario" data-source="/data/no-cache.js"></button>
-		<button type="submit" class="scenario" data-source="/data/cache.json"></button>
-		<button type="submit" class="scenario" data-source="/data/client.json"></button>
+		<div class="columns">
+			<div>
+				<h2>Endpoint 1: no cache rules</h2>
+			</div>
+			<div>
+				<h2>Endpoint 2: respect origin cache rule</h2>
+			</div>
+		</div>
+		<div class="columns">
+			<div>
+				${endpoints
+					.map(
+						(endpoint) =>
+							`<button type="submit" class="scenario" data-source="/data${endpoint}"></button>`,
+					)
+					.join("\n\t\t\t")}
+			</div>
+			<div>
+				${endpoints
+					.map(
+						(endpoint) =>
+							`<button type="submit" class="scenario" data-source="/data2${endpoint}"></button>`,
+					)
+					.join("\n\t\t\t")}
+			</div>
+		</div>
 		<p>&nbsp;</p>
 		<textarea id="output"></textarea>
 	</main>

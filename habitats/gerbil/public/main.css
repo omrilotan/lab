@@ -50,6 +50,21 @@ main {
 h1 {
 	font-size: 6vw;
 }
+
+.columns {
+	display: flex;
+}
+
+.columns div {
+	flex: 1;
+	width: 40vw;
+	padding: 0.2em;
+}
+
+.columns button {
+	width: 100%;
+}
+
 button {
 	font-size: 1em;
 	margin: 0.2em;
@@ -67,4 +82,11 @@ textarea {
 	color: var(--foreground-colour);
 	background: var(--background-colour);
 	border-color: var(--foreground-colour);
+}
+
+/** Change button size for small screens **/
+@media (max-width: 800px) {
+	button {
+		padding: 1em 0;
+	}
 }
